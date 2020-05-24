@@ -106,6 +106,7 @@ See the [corresponding HTTP service documentation][195].
   - `config.ownerId` **[string][197]?** 
   - `config.metadata` **[boolean][198]?** If true, `mapbox:` specific metadata will be preserved
   - `config.draft` **[boolean][198]** If `true` will retrieve the draft style, otherwise will retrieve the published style. (optional, default `false`)
+  - `config.fresh` **[boolean][198]** If `true`, will bypass the cached version of the style. Fresh style requests have a lower rate limit than cached requests and may have a higher latency. `fresh=true` should never be used in production or high concurrency environments. (optional, default `false`)
 
 #### Examples
 
@@ -1725,7 +1726,7 @@ to understand all of the available options.
 #### Parameters
 
 - `config` **[Object][196]** 
-  - `config.profile` **(`"driving"` \| `"walking"` \| `"cycling"`)**  (optional, default `"driving"`)
+  - `config.profile` **(`"driving"` \| `"driving-traffic"` \| `"walking"` \| `"cycling"`)**  (optional, default `"driving"`)
   - `config.waypoints` **[Array][206]&lt;[OptimizationWaypoint][244]>** An ordered array of [`OptimizationWaypoint`][176] objects, between 2 and 12 (inclusive).
   - `config.annotations` **[Array][206]&lt;(`"duration"` \| `"distance"` \| `"speed"`)>?** Specify additional metadata that should be returned.
   - `config.destination` **(`"any"` \| `"last"`)** Returned route ends at `any` or `last` coordinate. (optional, default `"any"`)
