@@ -106,6 +106,7 @@ See the [corresponding HTTP service documentation][195].
   - `config.ownerId` **[string][197]?** 
   - `config.metadata` **[boolean][198]?** If true, `mapbox:` specific metadata will be preserved
   - `config.draft` **[boolean][198]** If `true` will retrieve the draft style, otherwise will retrieve the published style. (optional, default `false`)
+  - `config.fresh` **[boolean][198]** If `true`, will bypass the cached version of the style. Fresh style requests have a lower rate limit than cached requests and may have a higher latency. `fresh=true` should never be used in production or high concurrency environments. (optional, default `false`)
 
 #### Examples
 
